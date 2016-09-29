@@ -15,6 +15,7 @@ open Fable.Helpers.Util
 
 type Easing = Func<float, float, float, float, float>
 
+// For performance, we use delegates instead of curried F# functions
 type Behavior = Func<ESprite, float, Promise<bool>>
 
 and ESprite(t:Texture, id: string, behaviors: Behavior list) =
@@ -29,6 +30,8 @@ and ESprite(t:Texture, id: string, behaviors: Behavior list) =
     member self.Behave(b:Behavior) =
         _behaviors <- b :: _behaviors
 
+    // Use a promise computation expression to iterate
+    // through the behaviors as if they were synchronous
     member self.Update(dt: float) = promise {
         let behaviors = _behaviors
         _behaviors <- []
@@ -45,6 +48,8 @@ and ESprite(t:Texture, id: string, behaviors: Behavior list) =
         _behaviors <- _behaviors @ notCompletedBehaviors
     }
 
+    // System.IDisposable is the usual interface for disposable objects
+    // in C#/F#. It lets you use language constructs like `use`. 
     interface IDisposable with
         member self.Dispose() =
             if not _disposed then
@@ -65,6 +70,8 @@ module Behaviors =
         s.position <- Point(s.position.x * acc.x, s.position.y + acc.y)
         Promise.lift true)
 
+    // Use just functions instead of objects to represent behaviors.
+    // As functions are closures, they can also keep state.
     let fade(easeFunction: Easing, duration) =
         let mutable ms = 0.
         Behavior(fun s dt ->
@@ -173,8 +180,8 @@ let rec animate (sprites: ESprite list) render dt =
         return xs }
     |> Promise.iter(fun sprites ->
         render()
-        Browser.window.requestAnimationFrame(fun dt -> animate sprites render dt)
-        |> ignore)
+        Browser.window.requestAnimationFrame(fun dt ->
+            animate sprites render dt) |> ignore)
 
 let createSprite texture stageW stageH id =
     // Behaviors
@@ -222,8 +229,8 @@ let start() =
             
     // Create our sprites
     let sprites =
-        [0 .. 100]
-        |> List.map (string >> createSprite texture renderer.width renderer.height)
+        [0 .. 100] |> List.map
+            (string >> createSprite texture renderer.width renderer.height)
 
     // Add sprites to stage and make some funny homing missiles
     sprites
