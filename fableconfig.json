@@ -1,0 +1,7 @@
+{
+  "projFile": "src/index.fsx",
+  "outDir": "out",
+  "module": "amd",
+  "loose": true,
+  "sourceMaps": true
+}
