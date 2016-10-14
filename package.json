@@ -4,12 +4,13 @@
   "version": "1.0.0",
   "main": "out/index.js",
   "dependencies": {
-    "fable-core": "^0.7.1-alpha",
-    "fable-powerpack": "^0.0.2",
-    "pixi.js": "^3.0.11",
-    "requirejs": "^2.3.2"
+    "babel-runtime": "^6.11.6",
+    "fable-core": "^0.7.3-alpha",
+    "fable-powerpack": "0.0.4",
+    "pixi.js": "^3.0.11"
   },
   "devDependencies": {
+    "babel-plugin-transform-runtime": "^6.15.0",
     "fable-import-pixi": "0.0.9",
     "finalhandler": "^0.5.0",
     "open": "0.0.5",
@@ -17,9 +18,13 @@
   },
   "scripts": {
     "start": "node server",
+    "build": "fable",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "fable": "^0.7.3-alpha"
+  }
 }

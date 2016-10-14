@@ -1,11 +1,15 @@
 {
   "projFile": "src/index.fsx",
   "outDir": "out",
-  "module": "commonjs",
-  "loose": true,
+  // The 'bundle' option can be a boolean or a string.
+  // If a string and ends with config.js is deemed a config file.
+  "bundle": "rollup.config.js",
   "sourceMaps": true,
+  // Add babel-plugin-transform-runtime to optimize the helper
+  // functions Babel adds to every file.
+  // Don't forget to install also the babel-runtime package.
+  "babelPlugins": ["transform-runtime"],
   "scripts": {
-    "prebuild": "npm install",
-    "postbuild": "webpack out/index.js out/bundle.js"
+    "prebuild": "npm install"
   }
 }
