@@ -1,6 +1,6 @@
 #r "../node_modules/fable-core/Fable.Core.dll"
+#r "../node_modules/fable-powerpack/Fable.PowerPack.dll"
 #load "../node_modules/fable-import-pixi/Fable.Import.Pixi.fs"
-#load "Fable.Helpers.Util.fs"
 
 open System
 open System.Collections.Generic
@@ -9,7 +9,7 @@ open Fable.Core.JsInterop
 open Fable.Import.PIXI
 open Fable.Import.PIXI.extras
 open Fable.Import
-open Fable.Helpers.Util
+open Fable.PowerPack
 
 // Types -------------------------------------------
 

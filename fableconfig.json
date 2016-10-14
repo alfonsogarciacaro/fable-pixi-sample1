@@ -1,7 +1,11 @@
 {
   "projFile": "src/index.fsx",
   "outDir": "out",
-  "module": "amd",
+  "module": "commonjs",
   "loose": true,
-  "sourceMaps": true
+  "sourceMaps": true,
+  "scripts": {
+    "prebuild": "npm install",
+    "postbuild": "webpack out/index.js out/bundle.js"
+  }
 }

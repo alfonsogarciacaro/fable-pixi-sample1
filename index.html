@@ -4,22 +4,10 @@
   <head>
     <meta charset="utf-8" />
     <title>Fable Test</title>
-    <script src="node_modules/requirejs/require.js"></script>
-    <script>
-        requirejs.config({
-            // Set the baseUrl to the path of the compiled JS code
-            baseUrl: 'out',
-            paths: {
-                // Explicit path to core lib (relative to baseUrl, omit .js)
-                'fable-core': '../node_modules/fable-core/fable-core',
-                'PIXI': '../node_modules/pixi.js/bin/pixi.min'
-            }
-        });
-        // Load the entry file of the app (use array, omit .js)
-        requirejs(["index"]);
-    </script>    
   </head>
   <body>
     <div id="game"></div>
+    <script src="node_modules/pixi.js/bin/pixi.min.js"></script>
+    <script src="out/bundle.js"></script>    
   </body>
 </html>

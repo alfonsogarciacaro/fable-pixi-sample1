@@ -4,12 +4,13 @@
   "version": "1.0.0",
   "main": "out/index.js",
   "dependencies": {
-    "fable-core": "^0.6.4",
+    "fable-core": "^0.7.1-alpha",
+    "fable-powerpack": "^0.0.2",
     "pixi.js": "^3.0.11",
     "requirejs": "^2.3.2"
   },
   "devDependencies": {
-    "fable-import-pixi": "0.0.8",
+    "fable-import-pixi": "0.0.9",
     "finalhandler": "^0.5.0",
     "open": "0.0.5",
     "serve-static": "^1.11.1"
