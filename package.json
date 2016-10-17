@@ -5,13 +5,14 @@
   "main": "out/index.js",
   "dependencies": {
     "babel-runtime": "^6.11.6",
-    "fable-core": "^0.7.3-alpha",
-    "fable-powerpack": "0.0.4",
+    "fable-core": "^0.7.5-alpha.2",
+    "fable-powerpack": "0.0.6",
     "pixi.js": "^3.0.11"
   },
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.15.0",
-    "fable-import-pixi": "0.0.9",
+    "fable-compiler": "^0.7.5-alpha.3",
+    "fable-import-pixi": "0.0.10",
     "finalhandler": "^0.5.0",
     "open": "0.0.5",
     "serve-static": "^1.11.1"
@@ -23,8 +24,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "engines": {
-    "fable": "^0.7.3-alpha"
-  }
+  "license": "ISC"
 }

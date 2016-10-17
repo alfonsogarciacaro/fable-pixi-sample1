@@ -1,15 +1,17 @@
 {
   "projFile": "src/index.fsx",
   "outDir": "out",
-  // The 'bundle' option can be a boolean or a string.
-  // If a string and ends with config.js is deemed a config file.
-  "bundle": "rollup.config.js",
   "sourceMaps": true,
   // Add babel-plugin-transform-runtime to optimize the helper
   // functions Babel adds to every file.
   // Don't forget to install also the babel-runtime package.
   "babelPlugins": ["transform-runtime"],
-  "scripts": {
-    "prebuild": "npm install"
+  // The 'bundle' option can be a boolean or a string.
+  // If a string and ends with config.js is deemed a config file.
+  "bundle": "rollup.config.js",
+  // Rollup understands better es2015 modules so let's load
+  // the es2015 distribution of fable-powerpack
+  "refs": {
+    "Fable.PowerPack": "fable-powerpack/es2015"
   }
 }
