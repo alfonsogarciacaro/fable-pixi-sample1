@@ -1,8 +1,6 @@
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+exports.__esModule = true;
 exports.server = exports.port = exports.opener = exports.serveStatic = exports.finalhandler = undefined;
 
 var _finalhandler = require("finalhandler");
@@ -21,7 +19,7 @@ var _http = require("http");
 
 var http = _interopRequireWildcard(_http);
 
-var _fableCore = require("fable-core");
+var _String = require("fable-core/String");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -50,6 +48,6 @@ var server = exports.server = function () {
   return server_1.listen(port);
 }();
 
-opener(_fableCore.String.fsFormat("http://localhost:%i")(function (x) {
+opener((0, _String.fsFormat)("http://localhost:%i")(function (x) {
   return x;
 })(port));
