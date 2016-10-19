@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.15.0",
-    "fable-compiler": "^0.7.5-alpha.6",
+    "fable-compiler": "^0.7.5-alpha.8",
     "fable-import-pixi": "0.0.10",
     "finalhandler": "^0.5.0",
     "open": "0.0.5",

@@ -16,7 +16,7 @@ open Fable.PowerPack
 type Easing = Func<float, float, float, float, float>
 
 // For performance, we use delegates instead of curried F# functions
-type Behavior = Func<ESprite, float, Promise<bool>>
+type Behavior = Func<ESprite, float, JS.Promise<bool>>
 
 and ESprite(t:Texture, id: string, behaviors: Behavior list) =
     inherit Sprite(t)
