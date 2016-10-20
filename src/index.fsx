@@ -49,7 +49,7 @@ and ESprite(t:Texture, id: string, behaviors: Behavior list) =
     }
 
     // System.IDisposable is the usual interface for disposable objects
-    // in C#/F#. It lets you use language constructs like `use`. 
+    // in C#/F#. It lets you use language constructs like `use`.
     interface IDisposable with
         member self.Dispose() =
             if not _disposed then
@@ -97,7 +97,7 @@ module Behaviors =
         Behavior(fun s dt ->
             ms <- ms + dt
             if ms > freq then
-                s.visible <- not s.visible 
+                s.visible <- not s.visible
                 ms <- 0.
             Promise.lift false) // blink never stops
 
@@ -139,7 +139,7 @@ module Behaviors =
         else true
         |> Promise.lift)
 
-    let moveTowardsMoving(target:Sprite, speed, radius, onCompleted) = Behavior(fun s _ -> 
+    let moveTowardsMoving(target:Sprite, speed, radius, onCompleted) = Behavior(fun s _ ->
         let sp = s.position
         let tx = target.position.x - sp.x
         let ty = target.position.y - sp.y
@@ -214,9 +214,9 @@ let start() =
     let renderer =
         WebGLRenderer(800., 600.,
             [ Antialias true
-              BackgroundColor ( float 0x7A325D )])    
+              BackgroundColor ( float 0x7A325D )])
     Browser.document.getElementById("game").appendChild(renderer.view) |> ignore
-    
+
     let stage = new Container(interactive=true)
 
     let texture =
@@ -226,7 +226,7 @@ let start() =
         g.endFill() |> ignore
         (g :> DisplayObject).generateTexture(
             U2.Case2 renderer, Globals.SCALE_MODES.LINEAR, 1.0)
-            
+
     // Create our sprites
     let sprites =
         [0 .. 100] |> List.map
@@ -241,5 +241,8 @@ let start() =
 
     // Show Time!
     animate sprites (fun () -> renderer.render(stage)) 0.
+
+// We'll change this value with roll-plugin-replace (see fableconfig.json)
+let foo = "foo"
 
 start()
