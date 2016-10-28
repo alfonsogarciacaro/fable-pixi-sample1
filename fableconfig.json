@@ -1,6 +1,5 @@
 {
   "projFile": "src/index.fsx",
-  "outDir": "out",
   "sourceMaps": true,
   // 'babel-plugin-transform-runtime' optimizes helper functions and adds needed polyfills
   // Don't forget to install it and the 'babel-runtime' package with npm
@@ -8,6 +7,7 @@
   // The 'rollup' option can be a boolean, a string (bundle name) or a Rollup config object
   // Check Rollup Wiki for full JS API options, and Fable docs for the default configuration
   "rollup": {
+    "dest": "out/bundle.js",
     // PIXI will be loaded directly from a script tag
     "external": ["PIXI"],
     // For plugins, we can pass an object with the names and arguments
@@ -17,10 +17,5 @@
     "plugins": {
       "replace": { "foo": "bar" }
     }
-  },
-  // Rollup understands better es2015 modules so let's load
-  // the es2015 distribution of fable-powerpack
-  "refs": {
-    "Fable.PowerPack": "fable-powerpack/es2015"
   }
 }
