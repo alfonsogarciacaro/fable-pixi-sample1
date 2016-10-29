@@ -1,0 +1,5 @@
+{
+    "projFile": "index.fsx",
+    "module": "commonjs",
+    "coreLib": "fable-core/umd"
+}

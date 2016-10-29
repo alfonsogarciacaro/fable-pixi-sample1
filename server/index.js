@@ -19,7 +19,7 @@ var _http = require("http");
 
 var http = _interopRequireWildcard(_http);
 
-var _String = require("fable-core/String");
+var _String = require("fable-core/umd/String");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
